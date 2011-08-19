@@ -13,8 +13,6 @@ Cube has a very similar API to the RobotLegs framework with a few notable differ
 
 class FlashContext extends Agent<flash.display.MovieClip, flash.events.Event>
  
------
-
-Releases
+** Releases
 
 0.1 - This release is credited to Lee Sylvester (Lazarus404)
