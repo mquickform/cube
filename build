@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "CREATING TEMP DIRECTORY..."
+mkdir -p temp
+
+echo "CHANGING TO TEMP DIRECTORY"
+cd temp
+
+echo "REMOVE EVERYTHING FROM THE TEMP DIRECTORY..."
+rm -rf *
+
+echo "CHANGING TO PARENT DIRECTORY..."
+cd ..
+
+echo "COPYING HAXELIB FILES..."
+cp -r haxelib/* temp/
+
+echo "CHANGING TO TEMP DIRECTORY..."
+cd temp
+
+echo "REMOVING SYSTEM FILES..."
+find . -name ".git" -exec rm -rf {} \;
+find . -name ".ds_store" -exec rm -rf {} \;
+
+echo "COMPRESSING HAXELIB INTO ZIP..."
+zip -X -r xirsys_cube.zip .
+
+echo "MOVING COMPRESSED ZIP TO PARENT DIRECTORY..."
+mv xirsys_cube.zip ../
+
+echo "CHANGING TO PARENT DIRECTORY..."
+cd ..
+
+echo "DELETING TEMP DIRECTORY..."
+rm -r temp;

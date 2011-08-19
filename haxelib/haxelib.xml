@@ -1,0 +1,6 @@
+<project name="xirsys_cube" url="http://github.com/xirsys/cube" license="BSD">
+	<user name="xirsys"/>
+	<tag v="javascript,php,neko,cpp,flash,flash9,cross"/>
+	<description>A loose port of the RobotLegs MVC framework.  Has a number of differences, so check the readme file.</description>
+	<version name="1.0.0">1.0.0</version>
+</project>

@@ -1,0 +1,20 @@
+* Cube MVC (a loose port of RobotLegs for haXe)
+
+Cube MVC is a version of RobotLegs ported to haXe with the intention of taking the "good parts", while keeping it loose enough that it is performant for all haXe targets.  Cube will not follow the RobotLegs development history but will instead evolve in its own way.
+
+Cube provides its own Finite State Machine library (FSM).
+
+Cube requires the XirSys Injector library from haXeLib.
+Cube requires the hxEvents library, though Cube is also built to easily exchange the eventing framework.
+
+** Using Cube MVC
+
+Cube has a very similar API to the RobotLegs framework with a few notable differences.  Many of these differences are found in the Injector, so this should be examined in order to correctly assign injectable objects and types.  The main difference in the Cube framework itself is the renaming of Context to Agent.  The Agent class needs to be provided with two type parameters, a base event class and a base visual container class.  For instance, when setting up a Flash context, one might do the following:
+
+class FlashContext extends Agent<flash.display.MovieClip, flash.events.Event>
+ 
+-----
+
+Releases
+
+0.1 - This release is credited to Lee Sylvester (Lazarus404)
