@@ -29,9 +29,14 @@
  **/
 
 package xirsys.cube.mvcs;
-
-import xirsys.cube.events.CentralDispatcher;
+import xirsys.cube.abstract.ICentralDispatcher;
 
 class Actor implements haxe.rtti.Infos {
-	public var eventDispatcher ( default, default ) : CentralDispatcher<Dynamic>;
+	
+	@Inject
+	public var eventDispatcher : ICentralDispatcher<Dynamic>;
+
+	public function new() {
+	}
+	
 }

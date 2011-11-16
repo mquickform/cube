@@ -50,7 +50,7 @@ class Command implements haxe.rtti.Infos {
 	@Inject
 	public var mediatorMap : IMediatorMap<Dynamic>;
 	
-	public function Command()
+	public function new()
 	{
 	}
 	

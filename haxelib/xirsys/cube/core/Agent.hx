@@ -84,7 +84,7 @@ class Agent<T,E> extends CentralDispatcher<IEvent>
 	 */
 	public function initiate()
 	{
-		dispatch( AgentEvent.STARTUP_COMPLETE, null );
+		eventDispatcher.dispatch( AgentEvent.STARTUP_COMPLETE, null );
 	}
 	
 	private function getContainer() : T
@@ -139,11 +139,11 @@ class Agent<T,E> extends CentralDispatcher<IEvent>
 	
 	private function bindMappings()
 	{
-		injector.mapInstance( ICentralDispatcher, eventDispatcher );
 		injector.mapSingleton( Injector );
-		injector.mapInstance( ICommandMap, _commandMap );
-		injector.mapInstance( IMediatorMap, _mediatorMap );
-		injector.mapInstance( IViewMap, _viewMap );
-		injector.mapInstance( IProxy, _proxy );
+		injector.mapInstance( ICentralDispatcher, eventDispatcher );
+		injector.mapInstance( ICommandMap, commandMap );
+		injector.mapInstance( IMediatorMap, mediatorMap );
+		injector.mapInstance( IViewMap, viewMap );
+		injector.mapInstance( IProxy, proxy );
 	}
 }
